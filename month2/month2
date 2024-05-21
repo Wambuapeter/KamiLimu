@@ -1,0 +1,122 @@
+#!/usr/bin/python3
+
+import os, sys, time
+# Normal
+black="\033[0;30m"
+red="\033[0;31m"
+green="\033[0;32m"
+yellow="\033[0;33m"  
+blue="\033[0;34m"
+purple="\033[0;35m"
+cyan="\033[0;36m"
+white="\033[0;37m"
+# Bold
+bblack="\033[1;30m"
+bred="\033[1;31m"
+bgreen="\033[1;32m"
+byellow="\033[1;33m"
+bblue="\033[1;34m"
+bpurple="\033[1;35m"
+bcyan="\033[1;36m"
+bwhite="\033[1;37m"
+
+logo='''
+'''+green+''' _  __               _ _     _                   __  __             _   _     
+'''+red+'''| |/ /__ _ _ __ ___ (_) |   (_)_ __ ___  _   _  |  \/  | ___  _ __ | |_| |__  
+'''+cyan+'''| ' // _` | '_ ` _ \| | |   | | '_ ` _ \| | | | | |\/| |/ _ \| '_ \| __| '_ \ 
+'''+yellow+'''| . \ (_| | | | | | | | |___| | | | | | | |_| | | |  | | (_) | | | | |_| | | |
+'''+blue+'''|_|\_\__,_|_| |_| |_|_|_____|_|_| |_| |_|\__,_| |_|  |_|\___/|_| |_|\__|_| |_|
+'''+purple+'''                                                                              
+'''+green+''' ____  
+|___ \ 
+  __) |
+ / __/ 
+|_____|
+       
+
+'''
+
+
+def display_banner(n):
+    for word in n + '\n':
+        sys.stdout.write(word)
+        sys.stdout.flush()
+        time.sleep(0.01)
+
+def display_help():
+    print("Navigate month 2 with commands:")
+    print("  help           - Display this help message")
+    print("  summary        - Summarize the Month 2 experience")
+    print("  scholarship    - Display lessons on the scholarship session")
+    print("  publicspeaking - Display lessons on the public speaking session")
+    print("  git            - State an introduction to Git")
+    print("  exit           - Exit the program")
+    print("  **note**: press 'enter' to explore each topic to the end🙂\n")
+
+def summarize_month2():
+    messages = [
+        "Month 2 came to an end and KamiLimu is becoming a love and part of my life🫀💗",
+        "Multiple sessions that I loved. Not only do I know how to use command line and git, I know how to learn😦🤷🏼‍♂️",
+        "A lot of games(Rescue Chao still whooping my ***😫😫😫), amazing podcasts😍😍, top notch food😂😂, lots of talks...",
+        "Can't wait for more🤩. Meanwhile let's take a recap. Ask for 'help' to navigate dummy🙂\n"
+    ]
+    display_messages(messages)
+
+def scholarship_lessons():
+    messages = [
+        "Some pointers about scholarship applications",
+        "You don't need to be perfect, just apply🙂. Assume everyone else is doing better than you though lol!👀",
+        "Prepare yourself, know the opportunity, the people in the organization,\n      Why you want to pursue the opportunity, what you bring to the table",
+        "Show that you care. Follow intrusctions well, use specified format🤌\n      Treat deadline as a hard rule. Apply way before it🤝",
+        "First paragraph is key👌. Start strong, the rest will follow😎\n      Make them want to read more😁\n      Use a personal story😍",
+        "Use linking words🤝, relate to the organization, impact your experiences✊"
+    ]
+    display_messages(messages)
+
+def public_speaking_lessons():
+    messages = [
+        "Ready to become a better public speaker?",
+        "Always remember: Arrive unknown and leave unforgettable😎",
+        "Be like Thanos😂\n      Learn to apply ethos(creating credibility)✅\n      Apply logos(Use logic)🔅\n      Apply pathos(connect to the audience through emotions)🫂",
+        "Nervous? Try running around but don't run away 😂\n"
+    ]
+    display_messages(messages)
+
+def git_introduction():
+    messages = [
+        "You may wonder why this code is in GitHub. It's because I learned Git🙂. Oh, and command line😮‍💨",
+        "Simple commands:\n      pwd - check current directory\n      mkdir - make a directory\n      cd - change directory\n      touch - make a file\n      ...and many more😁",
+        "Git, a version control system to manage stuff that you'll push to GitHub, the platform. Multiple commands: (clone, commit, push, pull)",
+        "git init - initialize git🤙\n      git checkout - navigate branches🚶‍♂️‍➡️\n      git clone - get existing copy of a repo🤲\n      git merge - integrate changes from other branches🤝"
+    ]
+    display_messages(messages)
+
+def display_messages(messages):
+    for message in messages:
+        print(message)
+        input("")
+
+def main():
+    display_banner(logo)
+    print("Welcome to month 2 recap of KamiLimu with me. (IK you need mentorship around here, so type 'help', I'll show you around🙂")
+    while True:
+        command = input("What do you wanna recap?: ").strip().lower()
+        
+        if command == "help":
+            display_help()
+        elif command == "summary":
+            summarize_month2()
+        elif command == "scholarship":
+            scholarship_lessons()
+        elif command == "publicspeaking":
+            public_speaking_lessons()
+        elif command == "git":
+            git_introduction()
+        elif command == "exit":
+            print("Exiting KamiLimu month 2. Hope you had fun😛. Remember to stay hungry and stay foolish🙂")
+            break
+        else:
+            print("Don't be immodest🙂. Just ask for 'help'\n")
+
+if __name__ == "__main__":
+    main()
